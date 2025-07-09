@@ -9,17 +9,17 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@chatwoot/react-native-widget": "^0.0.20",
-    "@react-native-async-storage/async-storage": "1.23.1",
-    "expo": "~51.0.28",
-    "expo-status-bar": "~1.12.1",
-    "react": "18.2.0",
-    "react-native": "0.74.5",
+    "@rookoo/react-native-widget": "^0.0.21",
+    "@react-native-async-storage/async-storage": "^2.1.2",
+    "expo": "^53.0.19",
+    "expo-status-bar": "~2.2.3",
+    "react": "^19.0.0",
+    "react-native": "^0.79.5",
     "react-native-modal": "^13.0.1",
-    "react-native-webview": "13.8.6"
+    "react-native-webview": "^13.13.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.28.0"
   },
   "private": true
 }

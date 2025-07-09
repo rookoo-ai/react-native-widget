@@ -1,15 +1,51 @@
+# NPM ignore file for @rookoo/react-native-widget
+
+# Development files
+.github/
+Example/
+node_modules/
+.git/
+.gitignore
+.eslintrc.js
+.prettierrc
+yarn.lock
+package-lock.json
+
+# Documentation
+CLAUDE.md
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
 # Logs
 *.log
-npm-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Dependency directory
-node_modules
+# Build artifacts
+build/
+dist/
+lib/
 
-# Runtime data
-tmp
+# Testing
+coverage/
+.nyc_output/
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.test
 
 # Examples
-examples
 examples/
-
-.DS_Store
+examples

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ChatWootWidget from '@chatwoot/react-native-widget';
+import RookooWidget from '@rookoo/react-native-widget';
 
 import {
   SafeAreaView,
@@ -25,7 +25,7 @@ const App = () => {
     status: 'active',
   };
   const websiteToken = 'RY3LaFtwmkPhDdZVmRd4ektW';
-  const baseUrl = 'https://staging.chatwoot.com';
+  const baseUrl = 'https://app.rookoo.ai';
   const [locale, setLocale] = useState('en');
 
   return (
@@ -74,10 +74,10 @@ const App = () => {
         <TouchableOpacity
           style={styles.button}
           onPress={() => toggleWidget(true)}>
-          <Text style={styles.buttonText}>Open Chatwoot Widget</Text>
+          <Text style={styles.buttonText}>Open Rookoo Widget</Text>
         </TouchableOpacity>
       </View>
-      <ChatWootWidget
+      <RookooWidget
         websiteToken={websiteToken}
         locale={locale}
         baseUrl={baseUrl}

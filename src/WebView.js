@@ -31,7 +31,7 @@ const WebViewComponent = ({
 }) => {
   const [currentUrl, setCurrentUrl] = React.useState(null);
   const [loading, setLoading] = useState(true);
-  let widgetUrl = `${baseUrl}/widget?website_token=${websiteToken}&locale=${locale}`;
+  let widgetUrl = `${baseUrl}/v2widget?website_token=${websiteToken}&locale=${locale}`;
 
   if (cwCookie) {
     widgetUrl = `${widgetUrl}&cw_conversation=${cwCookie}`;

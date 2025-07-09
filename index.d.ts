@@ -1,7 +1,7 @@
-declare module '@chatwoot/react-native-widget' {
+declare module '@rookoo/react-native-widget' {
   import React from 'react';
 
-  export interface ChatWootWidgetProps {
+  export interface RookooWidgetProps {
     websiteToken: string;
     locale?: string;
     baseUrl: string;
@@ -19,6 +19,6 @@ declare module '@chatwoot/react-native-widget' {
     customAttributes?: Record<string, unknown>;
   }
 
-  class ChatWootWidget extends React.Component<ChatWootWidgetProps, any> {}
-  export default ChatWootWidget;
+  class RookooWidget extends React.Component<RookooWidgetProps, any> {}
+  export default RookooWidget;
 }

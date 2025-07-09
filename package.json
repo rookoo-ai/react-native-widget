@@ -1,11 +1,16 @@
 {
-  "name": "@chatwoot/react-native-widget",
+  "name": "@rookoo/react-native-widget",
   "version": "0.0.21",
-  "description": "React Native widget for Chatwoot",
+  "description": "React Native widget for Rookoo",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:fix": "eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run lint",
+    "version:patch": "./scripts/bump-version.sh patch",
+    "version:minor": "./scripts/bump-version.sh minor",
+    "version:major": "./scripts/bump-version.sh major"
   },
   "dependencies": {
     "react-native-modal": "^13.0.1"
@@ -40,18 +45,32 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chatwoot/chatwoot-react-native-widget.git"
+    "url": "git+https://github.com/rookoo/rookoo-react-native-widget.git"
   },
   "keywords": [
     "react-native",
-    "chatwoot",
+    "rookoo",
     "mobile",
     "ios",
-    "android"
+    "android",
+    "chat",
+    "widget",
+    "customer-support"
   ],
   "bugs": {
-    "url": "https://github.com/chatwoot/chatwoot-react-native-widget/issues"
+    "url": "https://github.com/rookoo/rookoo-react-native-widget/issues"
   },
-  "homepage": "https://github.com/chatwoot/chatwoot-react-native-widget#readme",
-  "license": "MIT"
+  "homepage": "https://github.com/rookoo/rookoo-react-native-widget#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ]
 }

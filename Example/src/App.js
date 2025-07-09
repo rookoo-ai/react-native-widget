@@ -24,7 +24,7 @@ const propTypes = {
   closeModal: PropTypes.func,
 };
 
-const ChatWootWidget = ({
+const RookooWidget = ({
   isModalVisible,
   baseUrl,
   websiteToken,
@@ -74,6 +74,6 @@ const ChatWootWidget = ({
   );
 };
 
-ChatWootWidget.propTypes = propTypes;
+RookooWidget.propTypes = propTypes;
 
-export default ChatWootWidget;
+export default RookooWidget;

@@ -1,13 +1,16 @@
 <h1>
-chatwoot-react-native-widget
+rookoo-react-native-widget
 </h1>
 
-![](https://img.shields.io/npm/v/@chatwoot/react-native-widget?style=flat)
-![](https://img.shields.io/npm/dt/@chatwoot/react-native-widget.svg)
+![](https://img.shields.io/npm/v/@rookoo/react-native-widget?style=flat)
+![](https://img.shields.io/npm/dt/@rookoo/react-native-widget.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-![](https://img.shields.io/npm/l/@chatwoot/@chatwoot/react-native-widget)
+![](https://img.shields.io/npm/l/@rookoo/@rookoo/react-native-widget)
 
-- **Supported Chatwoot version:** 2.16.0+
+> **📝 Note:** This is a fork of the original [chatwoot-react-native-widget](https://github.com/chatwoot/chatwoot-react-native-widget) adapted for Rookoo. The widget has been updated to work with Rookoo's chat infrastructure while maintaining the same API and functionality.
+
+- **Supported Rookoo version:** 2.16.0+
+- **Original Chatwoot widget**: [chatwoot/chatwoot-react-native-widget](https://github.com/chatwoot/chatwoot-react-native-widget)
 
 <img src="https://user-images.githubusercontent.com/12408980/203909820-938136a6-bf5b-433e-9f68-d7f28a1303be.png" alt="screenshot" width="350">
 
@@ -16,16 +19,21 @@ chatwoot-react-native-widget
 Install the library using either yarn or npm like so:
 
 ```sh
-yarn add @chatwoot/react-native-widget
+yarn add @rookoo/react-native-widget
 ```
 
 OR
 
 ```sh
-npm install --save @chatwoot/react-native-widget
+npm install --save @rookoo/react-native-widget
 ```
 
 This library depends on [react-native-webview](https://www.npmjs.com/package/react-native-webview) and [async-storage](https://github.com/react-native-async-storage/async-storage). Please follow the instructions provided in the docs.
+
+**Peer Dependencies:**
+```bash
+npm install react-native-webview @react-native-async-storage/async-storage
+```
 
 ### iOS Installation
 
@@ -37,16 +45,62 @@ cd ios && pod install
 
 ### How to use
 
-1. Create a website channel in chatwoot server by following the steps described here https://www.chatwoot.com/docs/channels/website
-2. Replace `websiteToken` prop and `baseUrl`
+1. Create a website channel in rookoo server by following the steps described here https://www.rookoo.ai/docs/channels/website
+2. Replace `websiteToken` prop and `baseUrl` with your actual values
 
-```
+**Basic Implementation:**
 
+```javascript
 import React, { useState } from 'react';
-
 import { StyleSheet, View, SafeAreaView, TouchableOpacity, Text } from 'react-native';
+import RookooWidget from '@rookoo/react-native-widget';
 
-import ChatWootWidget from '@chatwoot/react-native-widget';
+const App = () => {
+  const [showWidget, toggleWidget] = useState(false);
+  
+  // Configure your widget
+  const websiteToken = 'YOUR_WEBSITE_TOKEN';
+  const baseUrl = 'https://app.rookoo.ai'; // or your custom Rookoo installation
+  
+  const user = {
+    identifier: 'john@gmail.com',
+    name: 'John Samuel',
+    avatar_url: '',
+    email: 'john@gmail.com',
+    identifier_hash: '', // Optional: for secure user identification
+  };
+  
+  const customAttributes = { 
+    accountId: 1, 
+    pricingPlan: 'paid', 
+    status: 'active' 
+  };
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => toggleWidget(true)}
+      >
+        <Text style={styles.buttonText}>Open Chat</Text>
+      </TouchableOpacity>
+      
+      {showWidget && (
+        <RookooWidget
+          websiteToken={websiteToken}
+          baseUrl={baseUrl}
+          closeModal={() => toggleWidget(false)}
+          isModalVisible={showWidget}
+          user={user}
+          customAttributes={customAttributes}
+          locale="en"
+          colorScheme="light"
+        />
+      )}
+    </SafeAreaView>
+  );
+};
+```
 
 const App = () => {
   const [showWidget, toggleWidget] = useState(false);
@@ -59,7 +113,7 @@ const App = () => {
   };
   const customAttributes = { accountId: 1, pricingPlan: 'paid', status: 'active' };
   const websiteToken = 'WEBSITE_TOKEN';
-  const baseUrl = 'CHATWOOT_INSTALLATION_URL';
+  const baseUrl = 'ROOKOO_INSTALLATION_URL';
   const locale = 'en';
   const colorScheme='dark'
 
@@ -72,7 +126,7 @@ const App = () => {
       </View>
       {
         showWidget&&
-          <ChatWootWidget
+          <RookooWidget
             websiteToken={websiteToken}
             locale={locale}
             baseUrl={baseUrl}
@@ -122,7 +176,42 @@ export default App;
 
 You're done!
 
-The whole example is in the `/example` folder.
+The complete example with styling is available in the [`/Example`](./Example) folder.
+
+## Fork Information
+
+This package is a fork of the original [Chatwoot React Native Widget](https://github.com/chatwoot/chatwoot-react-native-widget) with the following key changes:
+
+### 🔄 **Migration from Chatwoot to Rookoo**
+
+- **Package Name**: Changed from `@chatwoot/react-native-widget` to `@rookoo/react-native-widget`
+- **Base URL**: Updated default from `app.chatwoot.com` to `app.rookoo.ai`
+- **API Endpoint**: Widget endpoint changed from `/widget` to `/v2widget`
+- **Branding**: All references updated from Chatwoot to Rookoo
+- **Component**: Main component renamed from `ChatWootWidget` to `RookooWidget`
+
+### 🚀 **Enhancements Made**
+
+- **Automated Publishing**: GitHub Actions workflow for NPM publishing
+- **Better Documentation**: Enhanced README with clearer examples
+- **Developer Tools**: Version bump scripts and comprehensive contributing guidelines
+- **Quality Assurance**: CI/CD pipeline with linting and build validation
+- **Community**: Issue templates, PR templates, and code of conduct
+
+### 🔗 **Compatibility**
+
+This fork maintains **100% API compatibility** with the original Chatwoot widget. If you're migrating from Chatwoot to Rookoo, you only need to:
+
+1. Update the package: `npm install @rookoo/react-native-widget`
+2. Change the import: `import RookooWidget from '@rookoo/react-native-widget'`
+3. Update your `baseUrl` to your Rookoo installation
+4. Replace `ChatWootWidget` with `RookooWidget` in your JSX
+
+### 🙏 **Credits**
+
+We extend our gratitude to the original [Chatwoot team](https://github.com/chatwoot) for creating the foundational widget that made this adaptation possible.
+
+## Configuration Options
 
 ### Props
 
@@ -135,7 +224,7 @@ The whole example is in the `/example` folder.
     <td>baseUrl</td>
     <td> - </td>
     <td> String </td>
-    <td>Chatwoot installation URL</td>
+    <td>Rookoo installation URL</td>
   </tr>
  <tr>
     <td>websiteToken</td>
@@ -184,8 +273,42 @@ The whole example is in the `/example` folder.
 
 ## Feedback & Contributing
 
-Feel free to send us feedback on [Twitter](https://twitter.com/chatwootapp) or [file an issue](https://github.com/chatwoot/chatwoot-mobile-app/issues).
+Feel free to send us feedback on [Twitter](https://twitter.com/rookooai) or [file an issue](https://github.com/rookoo/rookoo-react-native-widget/issues).
 
-If there's anything you'd like to chat about, please feel free to join our [Discord](https://discord.gg/cJXdrwS) chat!
+If there's anything you'd like to chat about, please feel free to join our [Discord](https://discord.gg/rookoo) chat!
 
-_Chatwoot_ &copy; 2017-2023, Chatwoot Inc - Released under the MIT License.
+## Development & Publishing
+
+### Local Development
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Make your changes to the `src/` directory
+4. Test changes using the Example project:
+   ```bash
+   cd Example
+   npm install
+   npx react-native run-ios  # or run-android
+   ```
+
+### Publishing
+The package is automatically published to NPM when:
+- A new version is tagged and pushed to the main branch
+- The version in `package.json` is updated
+- All linting checks pass
+
+To publish a new version:
+1. Update the version in `package.json`
+2. Commit and push changes
+3. The GitHub Action will automatically publish to NPM
+
+### NPM Package
+- **Registry**: https://registry.npmjs.org/
+- **Package**: [@rookoo/react-native-widget](https://www.npmjs.com/package/@rookoo/react-native-widget)
+
+### Contributing
+Please read our [Contributing Guide](./CONTRIBUTING.md) for details on our development process and how to submit pull requests.
+
+### Code of Conduct
+This project follows our [Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you agree to uphold this code.
+
+_Rookoo_ &copy; 2017-2025, Rookoo Inc - Released under the MIT License.

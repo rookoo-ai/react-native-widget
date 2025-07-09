@@ -1,18 +1,18 @@
-# Chatwoot React Native Widget
+# Rookoo React Native Widget
 
 ## Project Overview
-This is a React Native widget library for integrating Chatwoot chat functionality into React Native applications. It provides a WebView-based chat interface that connects to Chatwoot server installations.
+This is a React Native widget library for integrating Rookoo chat functionality into React Native applications. It provides a WebView-based chat interface that connects to Rookoo server installations.
 
 ## Key Information
-- **Package**: @chatwoot/react-native-widget
-- **Supported Chatwoot version**: 2.16.0+
+- **Package**: @rookoo/react-native-widget
+- **Supported Rookoo version**: 2.16.0+
 - **Main dependencies**: react-native-webview, async-storage
 - **Current branch**: develop
 - **License**: MIT
 
 ## Core Component
-The main component is `ChatWootWidget` which accepts the following props:
-- `baseUrl` (String, required): Chatwoot installation URL
+The main component is `RookooWidget` which accepts the following props:
+- `baseUrl` (String, required): Rookoo installation URL
 - `websiteToken` (String, required): Website channel token
 - `colorScheme` (String, default: 'light'): Widget color scheme (light/dark/auto)
 - `locale` (String, default: 'en'): Locale setting

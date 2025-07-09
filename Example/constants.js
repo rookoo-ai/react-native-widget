@@ -1,4 +1,4 @@
-export const WOOT_PREFIX = 'chatwoot-widget:';
+export const WOOT_PREFIX = 'rookoo-widget:';
 export const POST_MESSAGE_EVENTS = {
   SET_LOCALE: 'set-locale',
   SET_CUSTOM_ATTRIBUTES: 'set-custom-attributes',
