@@ -7,12 +7,7 @@ rookoo-react-native-widget
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 ![](https://img.shields.io/npm/l/@rookoo/@rookoo/react-native-widget)
 
-> **📝 Note:** This is a fork of the original [chatwoot-react-native-widget](https://github.com/chatwoot/chatwoot-react-native-widget) adapted for Rookoo. The widget has been updated to work with Rookoo's chat infrastructure while maintaining the same API and functionality.
-
 - **Supported Rookoo version:** 2.16.0+
-- **Original Chatwoot widget**: [chatwoot/chatwoot-react-native-widget](https://github.com/chatwoot/chatwoot-react-native-widget)
-
-<img src="https://user-images.githubusercontent.com/12408980/203909820-938136a6-bf5b-433e-9f68-d7f28a1303be.png" alt="screenshot" width="350">
 
 ### Installation
 
@@ -45,7 +40,7 @@ cd ios && pod install
 
 ### How to use
 
-1. Create a website channel in rookoo server by following the steps described here https://www.rookoo.ai/docs/channels/website
+1. Create a website channel in rookoo
 2. Replace `websiteToken` prop and `baseUrl` with your actual values
 
 **Basic Implementation:**
@@ -198,19 +193,6 @@ This package is a fork of the original [Chatwoot React Native Widget](https://gi
 - **Quality Assurance**: CI/CD pipeline with linting and build validation
 - **Community**: Issue templates, PR templates, and code of conduct
 
-### 🔗 **Compatibility**
-
-This fork maintains **100% API compatibility** with the original Chatwoot widget. If you're migrating from Chatwoot to Rookoo, you only need to:
-
-1. Update the package: `npm install @rookoo/react-native-widget`
-2. Change the import: `import RookooWidget from '@rookoo/react-native-widget'`
-3. Update your `baseUrl` to your Rookoo installation
-4. Replace `ChatWootWidget` with `RookooWidget` in your JSX
-
-### 🙏 **Credits**
-
-We extend our gratitude to the original [Chatwoot team](https://github.com/chatwoot) for creating the foundational widget that made this adaptation possible.
-
 ## Configuration Options
 
 ### Props
@@ -271,12 +253,6 @@ We extend our gratitude to the original [Chatwoot team](https://github.com/chatw
  </tbody>
 </table>
 
-## Feedback & Contributing
-
-Feel free to send us feedback on [Twitter](https://twitter.com/rookooai) or [file an issue](https://github.com/rookoo/rookoo-react-native-widget/issues).
-
-If there's anything you'd like to chat about, please feel free to join our [Discord](https://discord.gg/rookoo) chat!
-
 ## Development & Publishing
 
 ### Local Development
@@ -312,3 +288,8 @@ Please read our [Contributing Guide](./CONTRIBUTING.md) for details on our devel
 This project follows our [Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you agree to uphold this code.
 
 _Rookoo_ &copy; 2017-2025, Rookoo Inc - Released under the MIT License.
+
+### Acknowledgements
+
+> **📝 Note:** This is a fork of the original [chatwoot-react-native-widget](https://github.com/chatwoot/chatwoot-react-native-widget) adapted for Rookoo. The widget has been updated to work with Rookoo's chat infrastructure while maintaining the same API and functionality.
+We extend our gratitude to the original [Chatwoot team](https://github.com/chatwoot) for creating the foundational widget that made this adaptation possible.
