@@ -97,6 +97,7 @@ const App = () => {
 };
 ```
 
+```javascript
 const App = () => {
   const [showWidget, toggleWidget] = useState(false);
   const user = {
@@ -166,32 +167,11 @@ const styles = StyleSheet.create({
 });
 
 export default App;
-
 ```
 
 You're done!
 
 The complete example with styling is available in the [`/Example`](./Example) folder.
-
-## Fork Information
-
-This package is a fork of the original [Chatwoot React Native Widget](https://github.com/chatwoot/chatwoot-react-native-widget) with the following key changes:
-
-### 🔄 **Migration from Chatwoot to Rookoo**
-
-- **Package Name**: Changed from `@chatwoot/react-native-widget` to `@rookoo/react-native-widget`
-- **Base URL**: Updated default from `app.chatwoot.com` to `app.rookoo.ai`
-- **API Endpoint**: Widget endpoint changed from `/widget` to `/v2widget`
-- **Branding**: All references updated from Chatwoot to Rookoo
-- **Component**: Main component renamed from `ChatWootWidget` to `RookooWidget`
-
-### 🚀 **Enhancements Made**
-
-- **Automated Publishing**: GitHub Actions workflow for NPM publishing
-- **Better Documentation**: Enhanced README with clearer examples
-- **Developer Tools**: Version bump scripts and comprehensive contributing guidelines
-- **Quality Assurance**: CI/CD pipeline with linting and build validation
-- **Community**: Issue templates, PR templates, and code of conduct
 
 ## Configuration Options
 

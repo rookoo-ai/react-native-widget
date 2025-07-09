@@ -801,13 +801,6 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.27.1"
 
-"@chatwoot/react-native-widget@^0.0.21":
-  version "0.0.21"
-  resolved "https://registry.npmjs.org/@chatwoot/react-native-widget/-/react-native-widget-0.0.21.tgz"
-  integrity sha512-NlsRyRkJz3GyijQ2eGCfNkkOA8mRGDjWkUdJKAmLhbbNtVrhaE0OWur5qhy26c3ekOgzii47s5hfbjHFqLXFPQ==
-  dependencies:
-    react-native-modal "^13.0.1"
-
 "@expo/cli@0.24.20":
   version "0.24.20"
   resolved "https://registry.npmjs.org/@expo/cli/-/cli-0.24.20.tgz"
@@ -1385,6 +1378,13 @@
   dependencies:
     invariant "^2.2.4"
     nullthrows "^1.1.1"
+
+"@rookoo/react-native-widget@^0.0.24":
+  version "0.0.24"
+  resolved "https://registry.npmjs.org/@rookoo/react-native-widget/-/react-native-widget-0.0.24.tgz"
+  integrity sha512-/pDgvN7wHjaqD+plaVF0plAZVFoGuA9pcC2eMzmawU7rOl2NqWxiIoRZSpqdNxuPNmfnOhjcokdexlPTC5b/GQ==
+  dependencies:
+    react-native-modal "^13.0.1"
 
 "@sinclair/typebox@^0.27.8":
   version "0.27.8"

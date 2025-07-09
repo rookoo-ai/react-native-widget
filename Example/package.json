@@ -9,7 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@rookoo/react-native-widget": "^0.0.21",
+    "@rookoo/react-native-widget": "^0.0.24",
     "@react-native-async-storage/async-storage": "^2.1.2",
     "expo": "^53.0.19",
     "expo-status-bar": "~2.2.3",

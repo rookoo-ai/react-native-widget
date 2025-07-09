@@ -5,21 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.0.25]
 
 ### Changed
-- Migrated from Chatwoot to Rookoo branding
-- Updated widget endpoint from `/widget` to `/v2widget`
-- Updated package name to `@rookoo/react-native-widget`
-- Updated base URL to `app.rookoo.ai`
-
-### Added
-- GitHub Actions workflow for automated NPM publishing
-- Comprehensive contributing guidelines
-- Code of conduct
-- Issue and PR templates
-- Version bump scripts
-- CI workflow for linting and testing
+- Migrated to v2 Rookoo widget
 
 ### Improved
 - Enhanced TypeScript definitions

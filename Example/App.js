@@ -24,7 +24,7 @@ const App = () => {
     pricingPlan: 'paid',
     status: 'active',
   };
-  const websiteToken = 'RY3LaFtwmkPhDdZVmRd4ektW';
+  const websiteToken = 'KYEzUEGfbfHPLEAtT5im5jcU';
   const baseUrl = 'https://app.rookoo.ai';
   const [locale, setLocale] = useState('en');
 
