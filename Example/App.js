@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import RookooWidget from '@rookoo/react-native-widget';
+import RookooWidget from './src/App';
 
 import {
   SafeAreaView,

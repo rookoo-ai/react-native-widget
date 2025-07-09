@@ -1,6 +1,6 @@
 {
-  "name": "example",
-  "version": "1.0.0",
+  "name": "rookoo-react-native-widget-example",
+  "version": "1.0.1",
   "main": "expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -9,7 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@rookoo/react-native-widget": "^0.0.24",
+    "@rookoo/react-native-widget": "^0.0.25",
     "@react-native-async-storage/async-storage": "^2.1.2",
     "expo": "^53.0.19",
     "expo-status-bar": "~2.2.3",

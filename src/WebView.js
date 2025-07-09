@@ -97,6 +97,7 @@ const WebViewComponent = ({
                 config: { authToken },
               } = parsedMessage;
               storeHelper.storeCookie(authToken);
+              setLoading(false); // Hide loading when widget is fully loaded
             }
             if (type === 'close-widget') {
               closeModal();
