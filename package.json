@@ -70,6 +70,7 @@
     "index.js",
     "index.d.ts",
     "src/",
+    "package-lock.json",
     "README.md",
     "LICENSE"
   ]

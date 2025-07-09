@@ -48,7 +48,7 @@ jobs:
     - name: Install Example dependencies
       run: |
         cd Example
-        npm ci
+        npm install --prefer-offline --no-audit
 
     - name: Check Example builds
       run: |
