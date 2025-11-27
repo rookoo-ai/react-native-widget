@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import RookooWidget from './src/App';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import {
-  SafeAreaView,
   Text,
   TextInput,
   TouchableOpacity,

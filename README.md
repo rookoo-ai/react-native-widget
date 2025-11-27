@@ -47,7 +47,8 @@ cd ios && pod install
 
 ```javascript
 import React, { useState } from 'react';
-import { StyleSheet, View, SafeAreaView, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import RookooWidget from '@rookoo/react-native-widget';
 
 const App = () => {

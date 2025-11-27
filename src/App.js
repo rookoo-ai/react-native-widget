@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, Appearance } from 'react-native';
-import Modal from 'react-native-modal';
+import { Appearance, Modal, StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import PropTypes from 'prop-types';
 import { storeHelper, findColors } from './utils';
 import WebView from './WebView';
-import styles from './style';
 import { COLOR_WHITE } from './constants';
 
 const propTypes = {
@@ -22,6 +21,7 @@ const propTypes = {
   colorScheme: PropTypes.oneOf(['dark', 'light', 'auto']),
   customAttributes: PropTypes.shape({}),
   closeModal: PropTypes.func,
+  onPostback: PropTypes.func,
 };
 
 const RookooWidget = ({
@@ -33,6 +33,7 @@ const RookooWidget = ({
   colorScheme = 'light',
   customAttributes = {},
   closeModal,
+  onPostback = null,
 }) => {
   const [cwCookie, setCookie] = useState('');
 
@@ -51,28 +52,37 @@ const RookooWidget = ({
   });
   return (
     <Modal
-      backdropColor={COLOR_WHITE}
-      coverScreen
-      isVisible={isModalVisible}
-      onBackButtonPress={closeModal}
-      onBackdropPress={closeModal}
-      style={styles.modal}>
-      <SafeAreaView style={[styles.headerView, { backgroundColor: headerBackgroundColor }]} />
-      <SafeAreaView style={[styles.mainView, { backgroundColor: mainBackgroundColor }]}>
-        <WebView
-          websiteToken={websiteToken}
-          cwCookie={cwCookie}
-          user={user}
-          baseUrl={baseUrl}
-          locale={locale}
-          colorScheme={colorScheme}
-          customAttributes={customAttributes}
-          closeModal={closeModal}
-        />
+      visible={isModalVisible}
+      animationType="slide"
+      presentationStyle="fullScreen"
+      onRequestClose={closeModal}>
+      <SafeAreaView style={[styles.container, { backgroundColor: headerBackgroundColor }]}>
+        <View style={[styles.content, { backgroundColor: mainBackgroundColor }]}>
+          <WebView
+            websiteToken={websiteToken}
+            cwCookie={cwCookie}
+            user={user}
+            baseUrl={baseUrl}
+            locale={locale}
+            colorScheme={colorScheme}
+            customAttributes={customAttributes}
+            closeModal={closeModal}
+            onPostback={onPostback}
+          />
+        </View>
       </SafeAreaView>
     </Modal>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  content: {
+    flex: 1,
+  },
+});
 
 RookooWidget.propTypes = propTypes;
 

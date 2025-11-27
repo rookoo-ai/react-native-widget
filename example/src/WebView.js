@@ -17,6 +17,7 @@ const propTypes = {
   locale: PropTypes.string,
   customAttributes: PropTypes.shape({}),
   closeModal: PropTypes.func,
+  onPostback: PropTypes.func,
 };
 
 const WebViewComponent = ({
@@ -28,6 +29,7 @@ const WebViewComponent = ({
   user = {},
   customAttributes = {},
   closeModal,
+  onPostback = null,
 }) => {
   const [currentUrl, setCurrentUrl] = React.useState(null);
   const [loading, setLoading] = useState(true);
@@ -101,6 +103,15 @@ const WebViewComponent = ({
             }
             if (type === 'close-widget') {
               closeModal();
+            }
+            // Handle postback action from button clicks in iframe
+            if (eventType === 'postback') {
+              const { data: postbackData } = parsedMessage;
+              const { payload } = postbackData || {};
+              // Call the callback if provided
+              if (onPostback && typeof onPostback === 'function') {
+                onPostback(payload);
+              }
             }
           }
         }}
