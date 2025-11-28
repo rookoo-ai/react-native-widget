@@ -242,7 +242,7 @@ The complete example with styling is available in the [`/Example`](./Example) fo
 3. Make your changes to the `src/` directory
 4. Test changes using the Example project:
    ```bash
-   cd Example
+   cd example
    npm install
    npx react-native run-ios  # or run-android
    ```

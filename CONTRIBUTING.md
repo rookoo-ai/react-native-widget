@@ -17,7 +17,7 @@ Thank you for your interest in contributing to the Rookoo React Native Widget! W
 
 3. **Set up the Example project:**
    ```bash
-   cd Example
+   cd example
    npm install
    cd ios && pod install && cd ..
    ```
@@ -35,7 +35,7 @@ Thank you for your interest in contributing to the Rookoo React Native Widget! W
 
 3. **Test your changes** using the Example project:
    ```bash
-   cd Example
+   cd example
    npx react-native run-ios  # or run-android
    ```
 

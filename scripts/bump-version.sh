@@ -46,7 +46,7 @@ echo "✅ Version bumped to $NEW_VERSION"
 
 # Update Example package.json to use the new version
 echo "📝 Updating Example package.json..."
-cd Example
+cd example
 npm pkg set dependencies.@rookoo/react-native-widget="^${NEW_VERSION#v}"
 cd ..
 
