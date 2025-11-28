@@ -57,6 +57,9 @@ export const storeHelper = {
     const cookie = await AsyncStorage.getItem('cwCookie');
     return cookie;
   },
+  clearCookie: async () => {
+    await AsyncStorage.removeItem('cwCookie');
+  },
   storeCookie: async (value) => {
     await AsyncStorage.setItem('cwCookie', value);
   },

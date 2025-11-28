@@ -47,11 +47,11 @@ jobs:
 
     - name: Install Example dependencies
       run: |
-        cd Example
+        cd example
         npm install --prefer-offline --no-audit
 
-    - name: Check Example builds
+    - name: Check Example builds with Expo
       run: |
-        cd Example
-        npx react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ios-bundle.js
-        npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android-bundle.js
+        cd example
+        npx expo export --platform ios
+        npx expo export --platform android

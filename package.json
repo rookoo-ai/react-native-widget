@@ -1,6 +1,6 @@
 {
   "name": "@rookoo/react-native-widget",
-  "version": "0.0.26",
+  "version": "0.1.1",
   "description": "React Native widget for Rookoo",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,7 @@
     "@react-native-async-storage/async-storage": ">=1.23.1",
     "react": "*",
     "react-native": "*",
+    "react-native-safe-area-context": ">=4.0.0",
     "react-native-webview": ">=13.8.6"
   },
   "devDependencies": {

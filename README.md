@@ -47,7 +47,8 @@ cd ios && pod install
 
 ```javascript
 import React, { useState } from 'react';
-import { StyleSheet, View, SafeAreaView, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import RookooWidget from '@rookoo/react-native-widget';
 
 const App = () => {
@@ -241,7 +242,7 @@ The complete example with styling is available in the [`/Example`](./Example) fo
 3. Make your changes to the `src/` directory
 4. Test changes using the Example project:
    ```bash
-   cd Example
+   cd example
    npm install
    npx react-native run-ios  # or run-android
    ```
