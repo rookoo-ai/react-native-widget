@@ -17,6 +17,7 @@ declare module '@rookoo/react-native-widget' {
     };
     // This can actually be any object
     customAttributes?: Record<string, unknown>;
+    onPostback?: (payload: any) => void;
   }
 
   class RookooWidget extends React.Component<RookooWidgetProps, any> {}
