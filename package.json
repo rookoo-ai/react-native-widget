@@ -1,6 +1,6 @@
 {
   "name": "@rookoo/react-native-widget",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "React Native widget for Rookoo",
   "main": "index.js",
   "scripts": {
