@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Appearance, Modal, StyleSheet, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import PropTypes from 'prop-types';
 import { storeHelper, findColors } from './utils';
 import WebView from './WebView';
@@ -56,21 +56,23 @@ const RookooWidget = ({
       animationType="slide"
       presentationStyle="fullScreen"
       onRequestClose={closeModal}>
-      <SafeAreaView style={[styles.container, { backgroundColor: headerBackgroundColor }]}>
-        <View style={[styles.content, { backgroundColor: mainBackgroundColor }]}>
-          <WebView
-            websiteToken={websiteToken}
-            cwCookie={cwCookie}
-            user={user}
-            baseUrl={baseUrl}
-            locale={locale}
-            colorScheme={colorScheme}
-            customAttributes={customAttributes}
-            closeModal={closeModal}
-            onPostback={onPostback}
-          />
-        </View>
-      </SafeAreaView>
+      <SafeAreaProvider>
+        <SafeAreaView style={[styles.container, { backgroundColor: headerBackgroundColor }]}>
+          <View style={[styles.content, { backgroundColor: mainBackgroundColor }]}>
+            <WebView
+              websiteToken={websiteToken}
+              cwCookie={cwCookie}
+              user={user}
+              baseUrl={baseUrl}
+              locale={locale}
+              colorScheme={colorScheme}
+              customAttributes={customAttributes}
+              closeModal={closeModal}
+              onPostback={(data) => console.log('Postback data:', data)}
+            />
+          </View>
+        </SafeAreaView>
+      </SafeAreaProvider>
     </Modal>
   );
 };
