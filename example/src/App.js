@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Appearance, Modal, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Appearance, Modal, StyleSheet, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import PropTypes from 'prop-types';
 import { storeHelper, findColors } from './utils';
 import WebView from './WebView';
-import { COLOR_WHITE } from './constants';
 
 const propTypes = {
   isModalVisible: PropTypes.bool.isRequired,

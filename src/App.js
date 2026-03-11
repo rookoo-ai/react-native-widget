@@ -4,7 +4,6 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import PropTypes from 'prop-types';
 import { storeHelper, findColors } from './utils';
 import WebView from './WebView';
-import { COLOR_WHITE } from './constants';
 
 const propTypes = {
   isModalVisible: PropTypes.bool.isRequired,
@@ -68,7 +67,7 @@ const RookooWidget = ({
               colorScheme={colorScheme}
               customAttributes={customAttributes}
               closeModal={closeModal}
-              onPostback={(data) => console.log('Postback data:', data)}
+              onPostback={onPostback}
             />
           </View>
         </SafeAreaView>
